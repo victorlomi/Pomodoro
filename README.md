@@ -42,7 +42,7 @@ $ pip install -r requirements.txt
 5. set environment variables and run
 
 ```
-$ export FLASK_APP=pitch.py
+$ export FLASK_APP=pomodoro.py
 $ export FLASK_ENV=development
 $ flask run
 ```
