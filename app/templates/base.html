@@ -11,7 +11,11 @@
         <a class="nav-title" href="{{ url_for('main.index') }}">Pomodoro</h1>
         <div class="links">
             <a href="#">Settings</a>
+            {% if current_user.is_anonymous %}
             <a href="{{ url_for('auth.login') }}">Log In</a>
+            {% else %}
+            <a href="{{ url_for('auth.logout') }}">Log Out</a>
+            {% endif %}
             <a href="{{ url_for('auth.signup') }}">Sign Up</a>
         </div>
     </nav>
