@@ -11,8 +11,8 @@
         <h1>Pomodoro</h1>
         <div class="links">
             <a href="#">Settings</a>
-            <a href="#">Log In</a>
-            <a href="#">Sign Up</a>
+            <a href="{{ url_for('auth.login') }}">Log In</a>
+            <a href="{{ url_for('auth.signup') }}">Sign Up</a>
         </div>
     </nav>
     {# flashed messages #}
