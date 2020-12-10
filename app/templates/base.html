@@ -10,7 +10,7 @@
     <nav>
         <a class="nav-title" href="{{ url_for('main.index') }}">Pomodoro</h1>
         <div class="links">
-            <a href="#">Settings</a>
+            <a href="{{ url_for('main.settings') }}">Settings</a>
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('auth.login') }}">Log In</a>
             {% else %}
