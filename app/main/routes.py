@@ -7,4 +7,4 @@ def index():
 
 @bp.route('/settings')
 def settings():
-    return 'settings'
+    return render_template('settings.html')
