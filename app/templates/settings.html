@@ -4,16 +4,23 @@
     <form action="" method="post">
         {{ form.hidden_tag() }} 
         <p>
-            {{ form.type_of_break.label }}<br>
-            {{ form.type_of_break(size=32) }}<br>
-            {% for error in form.type_of_break.errors %}
+            {{ form.time.label }}<br> 
+            {{ form.time(size=32) }}<br>
+            {% for error in form.time.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
-            {{ form.time.label }}<br> 
-            {{ form.time(size=32) }}<br>
-            {% for error in form.time.errors %}
+            {{ form.break_time.label }}<br>
+            {{ form.break_time(size=32) }}<br>
+            {% for error in form.break_time.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.type_of_break.label }}<br>
+            {{ form.type_of_break(size=32) }}<br>
+            {% for error in form.type_of_break.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>

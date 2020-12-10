@@ -12,6 +12,7 @@ class User(UserMixin, db.Model):
     sessions = db.Column(db.Integer())
     type_of_break = db.Column(db.String(140), index=True, unique=True)
     time = db.Column(db.Integer())
+    break_time = db.Column(db.Integer())
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
