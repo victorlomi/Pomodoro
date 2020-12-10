@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Pomodoro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    {# navigation bar #}
+    <nav>
+        <h1 class="nav-title">Navigation</h1>
+    </nav>
     {# flashed messages #}
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -14,7 +19,7 @@
         {% endfor %}
     </ul>
     {% endif %}
-    {% endwith%} 
+    {% endwith%}
 
     {# content block  #}
     {% block content %}{% endblock %}
