@@ -6,7 +6,7 @@ from app.main.forms import SettingsForm
 def index():
     return render_template('index.html') 
 
-@bp.route('/settings')
+@bp.route('/settings', methods=["GET", "POST"])
 def settings():
     form = SettingsForm()
-    return render_template('settings.html', form = form)
+    return render_template('settings.html', form=form)
