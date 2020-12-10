@@ -16,4 +16,4 @@ def settings():
 
 @bp.route('/timer')
 def timer():
-    return 'timer'
+    return  render_template('timer.html')
