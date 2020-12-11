@@ -2,17 +2,21 @@
 
 {% block content %}
     <h1>Timer</h1>
-    <h2 class="countdown-timer">Countdown Timer</h2>
+    <h2 id="countdown-timer">Countdown Timer</h2>
     <button class="work-timer" onclick="setTimer(25)">Work</button>
     <button class="break-timer" onclick="setTimer(5)">Break</button>
 
     <script type="text/javascript">
+        // the time we're going up to
+        let futureTime = new Date();
+
         function setTimer(time) {
             // get the current date and time
             let currentTime = new Date(); 
-            let futureTime = new Date();
-
             futureTime.setMinutes(currentTime.getMinutes() + time);
+
+            // display the countdown timer
+            document.getElementById("countdown-timer").innerHTML = `${time}:00`
 
             console.log(currentTime);
             console.log(futureTime);
