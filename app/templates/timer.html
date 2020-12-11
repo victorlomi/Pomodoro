@@ -9,16 +9,19 @@
     <script type="text/javascript">
         // Set the date we're counting down to
         var currentTime = new Date();
+        var futureTime = new Date();
+
+        var resetMinutes = true;
 
         // Update the count down every 1 second
         var x = setInterval(function() {
 
             // Get today's date and time
-            var futureTime = new Date();
             futureTime.setMinutes(currentTime.getMinutes() + 25);
 
             // Find the distance between futureTime and the count down date
             var distance = futureTime - currentTime;
+            console.log(distance);
 
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));

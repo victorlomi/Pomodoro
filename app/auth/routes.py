@@ -27,7 +27,7 @@ def login():
         login_user(user, remember=form.remember_me.data)
 
         # redirect to home - TODO - change to posts route
-        return redirect(url_for('main.index')) 
+        return redirect(url_for('main.settings')) 
 
     return render_template('auth/login.html', form=form)
 

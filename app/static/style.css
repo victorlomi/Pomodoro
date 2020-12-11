@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background-color: #FDFDFD;
 }
 
 nav {
@@ -9,7 +10,7 @@ nav {
 }
 
 nav .nav-title {
-    color: black;
+    color: #222;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -25,6 +26,45 @@ nav .links {
 }
 
 nav .links a {
-    color: black;
+    color: #222;
     text-decoration: none;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.hero-text {
+    grid-column: 2 / span 4;
+}
+
+.hero-text h1 {
+    color: #222;
+    font-size: 80px;
+    margin-top: 24px;
+    margin-bottom: 26px;
+}
+
+.hero-text p {
+    color: #4A4A4A;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 20px;
+}
+
+.call-to-action {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    background-color: #222;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 11px 20px;
+    color: white;
+    margin-top: 50px;
+}
+
+.hero-img {
+    grid-column: 6 / span 6;
 }
