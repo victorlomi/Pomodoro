@@ -74,13 +74,13 @@ nav .links a {
     grid-column: 6 / span 6;
 }
 
-.grid-container {
+.login-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 80px 300px 80px;
 }
 
-.grid-container .form-title {
+.login-container .form-title {
     font-family: 'Viga', sans-serif;
     grid-column: 2 / span 11;
     align-self: center;
@@ -90,28 +90,70 @@ nav .links a {
     color: #222;
 }
 
-.grid-container form {
+.login-container form {
     grid-column: 2 / span 11;
     align-self: center;
 }
 
-.grid-container p {
+.login-container p {
     grid-column: 2 / span 3;
 }
 
-.grid-container label {
+.login-container label {
     display: inline-block;
     margin-bottom: 8px;
     color: #4d4d4d;
 }
 
-.grid-container input {
+.login-container input {
     padding: 12px 20px;
     border-radius: 5px;
     border: 1px solid #d5d5d5;
     color: #454545;
 }
 
-.grid-container input:focus {
+.login-container input:focus {
+    border: 1px solid #d5d5d5;
+}
+
+.signup-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 80px 420px 80px;
+}
+
+.signup-container .form-title {
+    font-family: 'Viga', sans-serif;
+    grid-column: 2 / span 11;
+    align-self: center;
+    font-size: 60px;
+    margin-top: 70px;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.signup-container form {
+    grid-column: 2 / span 11;
+    align-self: center;
+}
+
+.signup-container p {
+    grid-column: 2 / span 3;
+}
+
+.signup-container label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #4d4d4d;
+}
+
+.signup-container input {
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 1px solid #d5d5d5;
+    color: #454545;
+}
+
+.signup-container input:focus {
     border: 1px solid #d5d5d5;
 }
