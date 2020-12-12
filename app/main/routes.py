@@ -11,8 +11,10 @@ def index():
 
 @bp.route('/settings', methods=["GET", "POST"])
 def settings():
-    form = SettingsForm()
+    if current_user.is_anonymous:
+        return redirect(url_for("auth.login"))
 
+    form = SettingsForm()
     if form.validate_on_submit():
         if current_user.is_authenticated:
             user = User.query.filter_by(username=current_user.username).first()
@@ -34,6 +36,4 @@ def settings():
 
 @bp.route('/timer')
 def timer():
-
-
     return  render_template('timer.html')
