@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for
 from flask_login import current_user, login_user, logout_user
+from hashlib import md5
 from app.models import User
 from app.main import bp
 from app.main.forms import SettingsForm
@@ -8,6 +9,10 @@ from app import db
 @bp.route('/')
 def index():
     return render_template('index.html')
+
+@bp.route('/profile')
+def profile():
+    return render_template('profile.html', user=current_user) 
 
 @bp.route('/settings', methods=["GET", "POST"])
 def settings():

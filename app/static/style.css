@@ -36,6 +36,8 @@ nav .links {
 nav .links a {
     color: #222;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .hero {
@@ -190,4 +192,15 @@ nav .links a {
     padding: 5px 25px;
     border-radius: 10px;
     margin: 0 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 6px;
 }
