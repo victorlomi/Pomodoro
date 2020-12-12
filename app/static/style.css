@@ -6,6 +6,10 @@ body {
     background-color: #FDFDFD;
 }
 
+.flashed-message {
+    list-style-type: none;
+}
+
 nav {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -93,6 +97,12 @@ nav .links a {
 .login-container form {
     grid-column: 2 / span 11;
     align-self: center;
+}
+
+.required-field {
+    display: inline-block;
+    margin-top: 5px;
+    color: #d50000;
 }
 
 .login-container p {
