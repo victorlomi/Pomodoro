@@ -3,7 +3,7 @@ A web app that allows you to stave away from burnout by allowing to work in a pa
 
 **Author: Victor Lominyo**
 
-**Live Link: https://to-come-later.com/**
+**Live Link: https://flask-pomodoro.herokuapp.com/**
 
 
 Technologies Used
