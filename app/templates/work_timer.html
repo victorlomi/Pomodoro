@@ -16,7 +16,11 @@
     </div>
 
     <script src="{{ url_for('static', filename='easytimer.min.js') }}"></script>
+    <script type=text/javascript src="{{
+    url_for('static', filename='jquery.js') }}"></script>
     <script type="text/javascript">
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
         let timer = new easytimer.Timer();
         let timerText = document.querySelector("#countdown-timer");
 
@@ -54,6 +58,16 @@
         timer.addEventListener('targetAchieved', function (e) {
             timerText.innerText = "You're Done! Take a break doing '{{ user.type_of_break }}'"
             timerText.style.fontSize = "20px";
+
+            $.ajax({
+                type: "POST",
+                url: "/increment-sessions",
+                data: "update",
+                dataType: "text",
+                success: function(data)  {
+                    console.log("updated user sessions")
+                }
+            });
         });
     </script>
 {% endblock%}

@@ -12,7 +12,7 @@ def index():
 
 @bp.route('/profile')
 def profile():
-    return render_template('profile.html', user=current_user) 
+    return render_template('profile.html', user=current_user)
 
 @bp.route('/settings', methods=["GET", "POST"])
 def settings():
@@ -26,12 +26,12 @@ def settings():
             user.type_of_break = form.type_of_break.data
             user.time = form.time.data
             user.break_time = form.break_time.data
+            user.sessions = 0
             db.session.commit()
 
         return redirect(url_for('main.timer', type_of_timer="work"))
 
     return render_template('settings.html', form=form)
-
 
 @bp.route('/timer/<type_of_timer>', methods=["GET", "POST"])
 def timer(type_of_timer):
@@ -39,3 +39,11 @@ def timer(type_of_timer):
         return  render_template('work_timer.html', user=current_user)
     else:
         return  render_template('break_timer.html', user=current_user)
+
+@bp.route("/increment-sessions", methods=["GET", "POST"])
+def increment_sessions():
+    user = User.query.filter_by(username=current_user.username).first()
+    user.sessions += 1
+    db.session.commit()
+
+    return "sessions updated"
