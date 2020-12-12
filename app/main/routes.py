@@ -7,7 +7,7 @@ from app import db
 
 @bp.route('/')
 def index():
-    return render_template('index.html') 
+    return render_template('index.html')
 
 @bp.route('/settings', methods=["GET", "POST"])
 def settings():
@@ -23,11 +23,14 @@ def settings():
             user.break_time = form.break_time.data
             db.session.commit()
 
-        return redirect(url_for('main.timer'))
+        return redirect(url_for('main.timer', type_of_timer="work"))
 
     return render_template('settings.html', form=form)
 
 
-@bp.route('/timer')
-def timer(): 
-    return  render_template('timer.html', user=current_user)
+@bp.route('/timer/<type_of_timer>')
+def timer(type_of_timer):
+    if type_of_timer == "work":
+        return  render_template('work_timer.html', user=current_user)
+    else:
+        return  render_template('break_timer.html', user=current_user)
