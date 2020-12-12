@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Timer</h1>
-    <a href="{{ url_for("main.timer", type_of_timer="work") }}">Work</a>
-    <a href="{{ url_for("main.timer", type_of_timer="break") }}">Break</a>
-    <h2 id="countdown-timer"></h2>
-    <div class="control-buttons">
-        <button id="start-button">Start</button>
-        <button id="pause-button">Pause</button>
-        <button id="stop-button">Stop</button>
-        <button id="reset-button">Reset</button>
+    <div class="timer-container">
+        <div class="tabs">
+            <a class="tab-underline" href="{{ url_for("main.timer", type_of_timer="work") }}">Work</a>
+            <a class="tab-text-left" href="{{ url_for("main.timer", type_of_timer="break") }}">Break</a>
+        </div>
+        <h2 id="countdown-timer"></h2>
+        <div class="control-buttons">
+            <button id="start-button">Start</button>
+            <button id="pause-button">Pause</button>
+            <button id="stop-button">Stop</button>
+            <button id="reset-button">Reset</button>
+        </div>
     </div>
 
     <script src="{{ url_for('static', filename='easytimer.min.js') }}"></script>
