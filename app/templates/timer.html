@@ -2,29 +2,55 @@
 
 {% block content %}
     <h1>Timer</h1>
-    <h2 id="countdown-timer"></h2>
     <button class="work-timer">Work</button>
     <button class="break-timer">Break</button>
+    <h2 id="countdown-timer"></h2>
+    <div class="control-buttons">
+        <button id="start-button">Start</button>
+        <button id="pause-button">Pause</button>
+        <button id="stop-button">Stop</button>
+        <button id="reset-button">Reset</button>
+    </div>
 
     <script src="{{ url_for('static', filename='easytimer.min.js') }}"></script>
     <script type="text/javascript">
         let timer = new easytimer.Timer();
         let timerText = document.querySelector("#countdown-timer");
-        let timerState = "work";
 
-        function updateWorkTimer() {
+        // initial timer display
+        timerText.innerHTML = "00:00:00";
+
+        // handle starting, stopping, resetting
+        let startButton = document.querySelector("#start-button");
+        let pauseButton = document.querySelector("#pause-button");
+        let stopButton = document.querySelector("#stop-button");
+        let resetButton = document.querySelector("#reset-button");
+
+        startButton.addEventListener("click", () => {
             timer.start({countdown: true, startValues: {minutes: 25}});
+        });
 
+        pauseButton.addEventListener("click", () => {
+            timer.pause();
+        });
+
+        stopButton.addEventListener("click", () => {
+            timer.stop();
+        });
+
+        resetButton.addEventListener("click", () => {
+            timer.reset();
+        });
+
+        // update the timer display
+        timer.addEventListener('secondsUpdated', function (e) {
             timerText.innerHTML = timer.getTimeValues().toString();
+            console.log("work")
+        });
 
-            timer.addEventListener('secondsUpdated', function (e) {
-                timerText.innerHTML = timer.getTimeValues().toString();
-            });
-
-            timer.addEventListener('targetAchieved', function (e) {
-                console.log("it's done");
-            });
-        }
+        timer.addEventListener('targetAchieved', function (e) {
+            console.log("it's done");
+        });
     </script>
 
 {% endblock%}
