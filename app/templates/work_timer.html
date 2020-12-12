@@ -52,7 +52,8 @@
         });
 
         timer.addEventListener('targetAchieved', function (e) {
-            timerText.innerText = "You're Done! Take a break"
+            timerText.innerText = "You're Done! Take a break doing '{{ user.type_of_break }}'"
+            timerText.style.fontSize = "20px";
         });
     </script>
 
