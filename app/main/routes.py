@@ -33,7 +33,7 @@ def settings():
     return render_template('settings.html', form=form)
 
 
-@bp.route('/timer/<type_of_timer>')
+@bp.route('/timer/<type_of_timer>', methods=["GET", "POST"])
 def timer(type_of_timer):
     if type_of_timer == "work":
         return  render_template('work_timer.html', user=current_user)

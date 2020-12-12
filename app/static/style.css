@@ -28,9 +28,16 @@ nav .nav-title {
 
 nav .links {
     display: flex;
-    grid-column: 9 / span 3;
     align-self: center;
     justify-content: space-between;
+}
+
+.nav-small-links {
+    grid-column: 9 / span 3;
+}
+
+.nav-large-links {
+    grid-column: 8 / span 4;
 }
 
 nav .links a {
