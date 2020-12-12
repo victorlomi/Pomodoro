@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ user.username }}</h1>
+    <div class="profile-container">
+        <div class="text">
+             <h1>Hey {{ current_user.username.title() }}</h1>  
+            <h2>Here are all your statistics</h2>
+            {% if current_user.sessions == None %}
+            <p>Completed Sessions: 0</p>
+            {% else %}
+            <p>Completed Sessions: {{ current_user.sessions }}</p>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
