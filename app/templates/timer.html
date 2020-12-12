@@ -18,7 +18,7 @@
         let timerText = document.querySelector("#countdown-timer");
 
         // initial timer display
-        timerText.innerHTML = "00:00:00";
+        timerText.innerHTML = "00:{{user.time}}:00";
 
         // handle starting, stopping, resetting
         let startButton = document.querySelector("#start-button");
@@ -27,7 +27,7 @@
         let resetButton = document.querySelector("#reset-button");
 
         startButton.addEventListener("click", () => {
-            timer.start({countdown: true, startValues: {minutes: 25}});
+            timer.start({countdown: true, startValues: {minutes: {{ user.time }} }});
         });
 
         pauseButton.addEventListener("click", () => {

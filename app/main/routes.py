@@ -23,17 +23,11 @@ def settings():
             user.break_time = form.break_time.data
             db.session.commit()
 
-            # prints for debugging on terminal(check server log)
-            print(f"user: {user.username} is logged in and has had values updated: ")
-            print(f"\t type_of_break: {user.type_of_break}")
-            print(f"\t time: {user.time}")
-            print(f"\t break_time: {user.break_time}")
-
         return redirect(url_for('main.timer'))
 
     return render_template('settings.html', form=form)
 
 
 @bp.route('/timer')
-def timer():
-    return  render_template('timer.html')
+def timer(): 
+    return  render_template('timer.html', user=current_user)
