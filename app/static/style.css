@@ -177,5 +177,17 @@ nav .links a {
 #countdown-timer {
     font-family: 'Viga', sans-serif;
     font-size: 90px;
-    margin-top: 20px;
+    margin-top: 36px;
+    margin-bottom: 33px;
+    color: #222;
+}
+
+.control-buttons button {
+    background-color: #222;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 25px;
+    border-radius: 10px;
+    margin: 0 10px;
 }
